@@ -1,4 +1,4 @@
-package aut;
+package card.pkg;
 
 /**
  * Created by parsa on 5/12/17.

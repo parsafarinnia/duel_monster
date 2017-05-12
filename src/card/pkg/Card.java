@@ -1,11 +1,12 @@
-package aut;
+package card.pkg;
 
 /**
  * Created by parsa on 5/12/17.
  */
-public abstract class Card implements Special{
+public abstract class Card implements Special {
     private String name;
     private String description;
+    public String cardType;
 
     public Card(String name,String description) {
         this.name = name;
