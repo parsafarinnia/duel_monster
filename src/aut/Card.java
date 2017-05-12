@@ -27,5 +27,18 @@ public abstract class Card {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+    //@Override
+public boolean equals(Card card1,Card card2){
+        if((card1.getName().equals(card2.getName()))&&(card1.getDescription().equals(card2.getDescription()))){
+            return true;
+        }
+        else return false;
+    }
+    //@Override
+    public String toString(Card card){
+
+return card.getName()+":  "+card.getDescription();
+    }
+
+
 }
