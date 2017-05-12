@@ -3,7 +3,7 @@ package aut;
 /**
  * Created by parsa on 5/12/17.
  */
-public abstract class Card {
+public abstract class Card implements Special{
     private String name;
     private String description;
 
