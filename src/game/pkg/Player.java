@@ -114,40 +114,75 @@ public class Player {
 
     public boolean playCardFromHand(int whichCard, Field myField) {
         if (whichCard >= 0 && whichCard < 5) {
-            if (hand[whichCard] != null) {
+            if ((hand[whichCard] != null)) {
                 if (hand[whichCard].cardType.equals("monster card")) {
-                    myField.addMonsterCard((MonsterCard) hand[whichCard]);
-                    hand[whichCard] = null;
+
+                    if (myField.addMonsterCard((MonsterCard) hand[whichCard])) {
+                        hand[whichCard] = null;
+                        return true;
+                    }
+                    return false;
 
 
                 }
                 if (hand[whichCard].cardType.equals("spell card")) {
-                    myField.addSpellCard((SpellCard) hand[whichCard]);
-                    hand[whichCard] = null;
-
-
+                    if (myField.addSpellCard((SpellCard) hand[whichCard])) {
+                        hand[whichCard] = null;
+                        return true;
+                    } else return false;
                 }
             }
-            return true;
+
 
         }
 
 
         return false;
     }
-    public boolean playSpecial(Field myField){
 
-return true;
-        }
-        public void changeLifePoints(int change){
-        lifePoints=lifePoints+change;
-        }
-        public boolean isDefeated(){
-            if (lifePoints<0)return true;
-            else  return false;
+    public boolean playSpecial(Field myField) {
+        if (nextSpecial == null) {
+            return false;
+        } else {
+            Card card = (Card) nextSpecial;
+            switch (card.cardType) {
+                case "monster card":
+
+
+                    if (myField.addMonsterCard((MonsterCard) card)) {
+                        nextSpecial = null;
+                        return true;
+
+
+                    }
+                case "spell card":
+                    if (myField.addSpellCard((SpellCard) card)) {
+                        nextSpecial = null;
+                        return true;
+
+
+                    }
+                case "trap card":
+                    return false;
+
+            }
+
+
         }
 
+        return true;
     }
+
+    public void changeLifePoints(int change) {
+        lifePoints = lifePoints + change;
+    }
+
+    public boolean isDefeated() {
+        if (lifePoints <= 0) return true;
+        else return false;
+    }
+
+}
 
 
 

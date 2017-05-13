@@ -6,15 +6,13 @@ package card.pkg;
 public class CardDeck extends  ObjectDeck{
 
 
-    public CardDeck(Card[] cards) {
+    public CardDeck(Card... cards) {
         super(cards);
     }
 
 
     @Override
     public Card deal(){
-    Card card= (Card) deck[super.index];
-    super.index--;
-return card;
+        return (Card) super.deal();
     }
 }

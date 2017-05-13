@@ -44,9 +44,6 @@ public  class PowerCard extends SpellCard {
     }
 
 
-    @Override
-    public void instantEffect(java.lang.reflect.Field owner, java.lang.reflect.Field enemy) {
 
-    }
 }
 

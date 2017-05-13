@@ -3,7 +3,7 @@ package card.pkg;
 /**
  * Created by parsa on 5/12/17.
  */
-public abstract class Card implements Special {
+public abstract class Card  {
     private String name;
     private String description;
     public String cardType;
@@ -35,10 +35,9 @@ public boolean equals(Card card1,Card card2){
         }
         else return false;
     }
-    //@Override
-    public String toString(Card card){
-
-return card.getName()+":  "+card.getDescription();
+    @Override
+    public String toString(){
+        return name + ":  "+description;
     }
 
 

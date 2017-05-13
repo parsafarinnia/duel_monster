@@ -4,7 +4,7 @@ package card.pkg;
  * Created by parsa on 5/12/17.
  */
 public class SpecialDeck extends ObjectDeck{
-public SpecialDeck(Special []specials){
+public SpecialDeck(Special... specials){
     super(specials);
 }
 public Special deal(){

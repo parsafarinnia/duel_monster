@@ -8,8 +8,9 @@ import card.pkg.SpellCard;
  * Created by parsa on 5/12/17.
  */
 public class Field {
-    MonsterCard monsters[] = new MonsterCard[5];
-    SpellCard spells[] = new SpellCard[5];
+   private MonsterCard monsters[] = new MonsterCard[5];
+     private SpellCard spells[] = new SpellCard[5];
+
 
 
     public MonsterCard[] getMonsters() {
@@ -20,8 +21,13 @@ public class Field {
         return spells;
     }
 
-    public void setSpells(SpellCard[] spells) {
-        this.spells = spells;
+    public void destroyFirstSpell() {
+        for(int i =0 ; i < 5 ; i ++){
+            if (spells[i] != null) {
+                spells[i] = null;
+                return;
+            }
+        }
     }
 
     public void setMonsters(MonsterCard[] monsters) {
@@ -30,6 +36,7 @@ public class Field {
     }
 
     public void cardTurnEffects(Field enemyField) {
+        //TODO
 for(int i=0 ;i<5;i++)
     if(monsters[i]!=null){
         monsters[i].setCanAttack(true);
