@@ -1,6 +1,6 @@
 package game.pkg;
 import card.pkg.*;
-import game.pkg.*;
+
 
 
 import java.util.Scanner;
